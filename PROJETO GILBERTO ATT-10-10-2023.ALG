@@ -1,6 +1,6 @@
 Algoritmo "PET Jubileu"
 // Algoritmo "PET Jubileu"
-// Disciplina   : [Linguagem e Lógica de Programação]
+// Disciplina   : [CONCEITOS DE ALGORITMOS - A - (1Âº PerÃ­odo)]
 
 var
    idade, felicidade, limpeza, fome, doente, opcao: inteiro
@@ -25,8 +25,8 @@ inicio
       escrevaL("===========================")
       escrevaL("| Projeto Virtual Pet 2023 |")
       escrevaL("===========================")
-      escrevaL("Escolha uma opção a seguir: ")
-      escrevaL("[1] Avançar o tempo")
+      escrevaL("Escolha uma opÃ§Ã£o a seguir: ")
+      escrevaL("[1] AvanÃ§ar o tempo")
       escrevaL("[2] Alimentar")
       escrevaL("[3] Dar banho")
       escrevaL("[4] Brincar")
@@ -41,7 +41,7 @@ inicio
          fome <- fome + 2
          felicidade <- felicidade - 2
          limpeza <- limpeza - 2
-         escrevaL("CUIDADO! Você está sacrificando o estado de saúde do seu pet!")
+         escrevaL("CUIDADO! VocÃª estÃ¡ sacrificando o estado de saÃºde do seu pet!")
       senao
          se (opcao = 2) entao
             Limpatela
@@ -70,7 +70,7 @@ inicio
                      escrevaL("Fome: ", fome, "/10")
                      escrevaL("")
                      se (doente = 1) entao
-                        escrevaL("Seu pet está doente!")
+                        escrevaL("Seu pet estÃ¡ doente!")
                      fimse
                   senao
                      se (opcao = 6) entao
