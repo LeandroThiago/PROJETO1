@@ -1,9 +1,14 @@
-Algoritmo "PET Jubileu"
-// Algoritmo "PET Jubileu"
-// Disciplina   : [CONCEITOS DE ALGORITMOS - A - (1Âº PerÃ­odo)]
+Algoritmo "Virtual Pet"
+// Disciplina :  Conceitos de Algoritmos
+// Professor  :  Gilberto Viana de Oliveira
+// Descrição  :  Apresentamos a você o Virtual PET, a experiência mais cativante
+// e sem complicações de ter um animal de estimação!
+// Alunos     : Leandro Thiago da Silva, Luiz Felipe Portilho,
+//              Matheus Matos, Mateus Ribeiro
 
 var
-   idade, felicidade, limpeza, fome, doente, opcao: inteiro
+   idade: real
+   felicidade, limpeza, fome, doente, opcao: inteiro
    nomePet: caractere
    jogoAtivo: logico
 
@@ -16,93 +21,100 @@ inicio
    doente <- 0
    jogoAtivo <- verdadeiro
 
-   escreval("Escolha um nome para o seu virtual pet: ")
+   escreval("======================")
+   escreval("    _=,_")
+   escreval(" o_/6 /#\")
+   escreval(" \__ |##/")
+   escreval("  ='|--\")
+   escreval("    /   #'-.")
+   escreval("    \#|_   _'-. /")
+   escreval("     |/ \_( # |''  ")
+   escreval("    C/ ,--___/")
+   escreval("======================")
+   escreval("")
+   escreval("Escolha um nome para o seu Virtual Pet: ")
    leia(nomePet)
-   escrevaL("")
-   escrevaL("")
+   escreval("")
+   escreval("")
+   limpatela
 
-   enquanto (jogoAtivo) faca 
-      escrevaL("===========================")
-      escrevaL("| Projeto Virtual Pet 2023 |")
-      escrevaL("===========================")
-      escrevaL("    _=,_")
-      escrevaL(" o_/6 /#\")
-      escrevaL(" \__ |##/")
-      escrevaL("  ='|--\")
-      escrevaL("    /   #'-.")
-      escrevaL("    \#|_   _'-. /")
-      escrevaL("     |/ \_( # |''  ")
-      escrevaL("    C/ ,--___/")
-      escrevaL("===========================")
-      escrevaL("Escolha uma opÃƒÂ§ÃƒÂ£o a seguir: ")
-      escrevaL("[1] AvanÃƒÂ§ar o tempo")
-      escrevaL("[2] Alimentar")
-      escrevaL("[3] Dar banho")
-      escrevaL("[4] Brincar")
-      escrevaL("[5] Ver status")
-      escrevaL("[6] Sair")
-      escrevaL("===========================")
+   enquanto (jogoAtivo) faca
+      escreval("===========================")
+      escreval("| Projeto Virtual Pet 2023 |")
+      escreval("===========================")
+      escreval("Escolha uma opção a seguir: ")
+      escreval("[1] Avançar o tempo")
+      escreval("[2] Alimentar")
+      escreval("[3] Dar banho")
+      escreval("[4] Brincar")
+      escreval("[5] Ver status")
+      escreval("[6] Desligar")
+      escreval("===========================")
       leia(opcao)
 
       se (opcao = 1) entao
-         Limpatela
-         idade <- idade + 1
+         limpatela
+         idade <- idade + 1/3
          fome <- fome + 2
          felicidade <- felicidade - 2
          limpeza <- limpeza - 2
-         escrevaL("CUIDADO! VocÃª estÃ¡ sacrificando o estado de saÃºde do seu pet!")
+         se (idade > 7) entao
+            escreval("Seu pet,", nomePet, " ,morreu de velhice!")
+fimalgoritmo
+fimse
+
+escreval(nomePet,", você avançou 8h no tempo! Lembre-se que seu tempo máximo de vida é de 7 dias")
+senao
+   se (opcao = 2) entao
+      limpatela
+      se (fome > 0) entao
+         fome <- fome - 2
+         escreval(nomePet,", + 2 pontos acrescentados!")
+      fimse
+   senao
+      se (opcao = 3) entao
+         limpatela
+         limpeza <- limpeza + 10
+         escreval(nomePet,", + 10 pontos acrescentados!")
       senao
-         se (opcao = 2) entao
-            Limpatela
-            se (fome > 0) entao
-               fome <- fome - 2
-               escrevaL("+ 2 pontos acrescentados!")
-            fimse
+         se (opcao = 4) entao
+            limpatela
+            felicidade <- felicidade + 2
+            escreval(nomePet,", + 2 pontos acrescentados!")
          senao
-            se (opcao = 3) entao
-               Limpatela
-               limpeza <- limpeza + 2
-               escrevaL("+ 2 pontos acrescentados!")
+            se (opcao = 5) entao
+               limpatela
+               escreval("=========STATUS=========")
+               escreval("Nome: ", nomePet)
+               escreval("Idade: ", idade, " dia(s)")
+               escreval("Felicidade: ", felicidade, "/10")
+               escreval("Limpeza: ", limpeza, "/10")
+               escreval("Fome: ", fome, "/10")
+               escreval("")
+               se (doente = 1) entao
+                  escreval("Seu pet,", nomePet, " ,está doente!")
+               fimse
             senao
-               se (opcao = 4) entao
-                  Limpatela
-                  felicidade <- felicidade + 2
-                  escreval("+ 2 pontos acrescentados!")
-               senao
-                  se (opcao = 5) entao
-                     Limpatela
-                     escrevaL("=========STATUS=========")
-                     escrevaL("Nome: ", nomePet)
-                     escrevaL("Idade: ", idade, " ano")
-                     escrevaL("Felicidade: ", felicidade, "/10")
-                     escrevaL("Limpeza: ", limpeza, "/10")
-                     escrevaL("Fome: ", fome, "/10")
-                     escrevaL("")
-                     se (doente = 1) entao
-                        escrevaL("Seu pet estÃ¡ doente!")
-                     fimse
+               se (opcao = 6) entao
+                  limpatela
+                  se (fome >= 10) entao
+                     escreval("Seu pet,", nomePet, " ,morreu de fome.")
                   senao
-                     se (opcao = 6) entao
-                        Limpatela
-                        se (fome >= 10) entao
-                           escrevaL("Seu pet morreu de fome.")
-                        senao
-                           se (felicidade < 0) entao
-                              escrevaL("Seu pet morreu de tristeza.")
-                           senao
-                              se (limpeza <= 0) entao
-                                 escrevaL("Seu pet morreu por sujeira.")
-                              fimse
-                           fimse
+                     se (felicidade < 0) entao
+                        escreval("Seu pet,", nomePet, " ,morreu de tristeza.")
+                     senao
+                        se (limpeza <= 0) entao
+                           escreval("Seu pet,", nomePet, " ,morreu por sujeira.")
                         fimse
-                        escreval("FIM DE JOGO")
-                        jogoAtivo <- falso
                      fimse
                   fimse
+                  escreval(nomePet, ", FIM DE JOGO!")
+                  jogoAtivo <- falso
                fimse
             fimse
          fimse
       fimse
-   fimEnquanto
-fimAlgoritmo
-
+   fimse
+fimse
+fimenquanto
+fimalgoritmo
